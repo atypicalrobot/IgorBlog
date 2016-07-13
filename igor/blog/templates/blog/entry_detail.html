@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2> {{ object }} </h2>
+<p> {{ object.content }} </p>
+{% if object.picture %}
+	<img src="{{ object.picture.url }}" class="pad-out max-out" width="100%" align="left" />
+{% else %}
+	<img src="http://lorempixel.com/800/600/abstract/" class="pad-out" width="100%" align="left" />
+{% endif %}
+{% endblock content %}

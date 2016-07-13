@@ -1,0 +1,49 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+.topbar {
+	text-align: center;
+}
+
+.topbar--icon {
+	padding-left: 15px;
+	padding-right: 3px;
+}
+
+.pad-out {
+	padding: 0 10px 20px 0;
+}
+
+.max-out {
+	max-width: 100%;
+}
+
+.panel {
+	padding-left: 20px;
+}
+
+body {
+	background-color: whitesmoke;
+}
+
+.about-pad {
+
+	padding: 20px 20px 20px 20px;
+}
+
+.about-max {
+
+	max-width: 100%;
+}
+
+
+
+
+
+
+
+

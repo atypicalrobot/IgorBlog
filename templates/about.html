@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="topbar">
+		{% for section in object_list %}
+		    <i class="fa fa-{{ section.icon }} fa-lg topbar--icon"></i> {{ section.body }}
+		{% empty %}
+		    You can change this header in the admin interface.
+		{% endfor %}
+	</div><hr>
+
+		{% if about %}
+
+		<h2 align="center">About Me</h2>
+		<div class="row">
+			<div class="col-md-12">
+			    <div class="panel">
+			    	<div class="row">
+			    		<div class="col-md-7 about-pad">
+			    			{{ about.body }}
+			    		</div>
+			    		
+			    		<div class="col-md-5">
+			    			<img src="{{ about.picture.url }}" class="about-pad about-max" width="50%" align="right"/>
+			    		</div>
+			    	</div>
+			    </div>	
+			</div>
+		</div>	    		
+	
+
+		{% endif %}
+
+		{% if recent_posts %}
+
+		<h2 >Recent Posts</h2>
+		<div class="row">
+		    {% for post in recent_posts %}
+		    <div class="col-md-12">
+			    <div class="panel">
+			    	<div class="row">
+			    		<div class="col-md-12">
+						  	<h2><a href="{{ post.get_absolute_url }}">{{ post.headline }}</a> <small>{{ post.pub_date }}</small></h2>
+						</div>
+
+						<div class="col-md-3">
+						  	{% if post.picture %}
+								<img src="{{ post.picture.url }}" class="pad-out max-out" width="100%" align="left" />
+							{% else %}
+								<img src="http://lorempixel.com/800/600/abstract/" class="pad-out" width="100%" align="left" />
+							{% endif %}
+						</div>
+
+						<div class="col-md-9">
+						    <p>{{ post.content }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		
+	{% endif %}
+{% endblock %}

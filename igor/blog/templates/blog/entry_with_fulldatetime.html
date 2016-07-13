@@ -1,0 +1,13 @@
+<h2><a href="{{ entry.get_absolute_url }}">{{ entry|title }}</a> <small>{{ entry.pub_date }}</small></h2>
+<div class="row">
+  <div class="col-md-3">
+  	{% if entry.picture %}
+		<img src="{{ entry.picture.url }}" class="pad-out max-out" width="100%" align="left" />
+	{% else %}
+		<img src="http://lorempixel.com/800/600/abstract/" class="pad-out" width="100%" align="left" />
+	{% endif %}
+  </div>
+  <div class="col-md-9">
+	{{ entry.content|safe }}
+  </div>
+</div>
